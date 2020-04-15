@@ -1,4 +1,12 @@
+const path = require('path')
+
 module.exports = {
+  siteMetadata: {
+    title: `Chemistry Blog`,
+    author: `Sidney Elmer`,
+    description: `A blog about chemistry, as you may imagine`,
+    image: path.join(__dirname, 'src', 'images', 'seo.png')
+  },
   plugins: [
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
@@ -7,9 +15,9 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        path: path.join(__dirname, 'src', 'images'),
+        name: `images`
+      }
     },
     {
       resolve: 'gatsby-source-cosmicjs',

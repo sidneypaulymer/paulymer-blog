@@ -7,6 +7,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
+import SEO from '../components/seo'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -22,6 +23,11 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={location}>
+        <SEO 
+          article={true}
+          title={post.title}
+          image={post.metadata.hero.local.childImageSharp.fixed}
+        />
         <style>
           {`
           .post-content {
@@ -129,6 +135,11 @@ export const pageQuery = graphql`
         hero {
           local {
             childImageSharp {
+              fixed(width: 1200) {
+                src
+                height
+                width
+              }
               fluid(quality: 90, maxWidth: 1920) {
                 ...GatsbyImageSharpFluid_withWebp
               }
