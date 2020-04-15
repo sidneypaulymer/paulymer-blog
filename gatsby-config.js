@@ -1,8 +1,11 @@
 const path = require('path')
 
+const title = `Chemistry Blog`
+
 module.exports = {
   siteMetadata: {
-    title: `Chemistry Blog`,
+    title,
+    titleTemplate: `%s | ${title}`,
     author: `Sidney Elmer`,
     description: `A blog about chemistry, as you may imagine`,
     image: path.join(__dirname, 'src', 'images', 'seo.png'),
