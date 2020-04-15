@@ -20,6 +20,8 @@ const SEO = ({ title, description, image: customImage, article }) => {
   let image = defaultImage || customImage
   if (image.localFile) {
     image = image.localFile.childImageSharp.src
+  } else if (image.src) {
+    image = image.src
   }
 
   const seo = {
