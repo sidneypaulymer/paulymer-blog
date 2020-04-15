@@ -5,7 +5,8 @@ module.exports = {
     title: `Chemistry Blog`,
     author: `Sidney Elmer`,
     description: `A blog about chemistry, as you may imagine`,
-    image: path.join(__dirname, 'src', 'images', 'seo.png')
+    image: path.join(__dirname, 'src', 'images', 'seo.png'),
+    twitterUsername: `sidneypaulymer`
   },
   plugins: [
     `gatsby-plugin-offline`,
